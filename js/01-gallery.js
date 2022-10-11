@@ -49,11 +49,11 @@ function onGalleryContainerClick(event) {
    
 };
 
-function isPhotoCardEl(event) {
-  if (!event.target.classList.contains('gallery__image')) {
-  return
-  }  
-};
+// function onEscClose(event) {
+//   if (event.code === 'Escape') {
+//       instance.close();      
+//     }
+// }
 
 
 
