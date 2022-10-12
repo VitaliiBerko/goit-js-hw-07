@@ -6,6 +6,7 @@ console.log(galleryItems);
 const galleryContainer = document.querySelector('.gallery');
 const cardsMarkUp = createPhotoCartMarkup(galleryItems);
 
+
 galleryContainer.insertAdjacentHTML('beforeend', cardsMarkUp);
 
 galleryContainer.addEventListener('click', onGalleryContainerClick);
@@ -33,27 +34,43 @@ function onGalleryContainerClick(event) {
     if(!isPhotoCardEl) {
         return;
   }
-     
-  // isPhotoCardEl(event);
 
+  // openBigPhoto();
    const instance = basicLightbox.create(`
-    <img src="${event.target.dataset.source}">
-`)
-  instance.show()  
+ <img src="${event.target.dataset.source}">
+  `);
+instance.show()
+
   
-  window.addEventListener('keydown', event => {
+  window.addEventListener('keydown', 
+  // onEscClose)
+  
+  event => {
     if (event.code === 'Escape') {
       instance.close();      
     }
+
+    console.log(event.target.code);
   });
-   
+       
 };
 
-// function onEscClose(event) {
+
+
+// function openBigPhoto () { 
+//   const instance = basicLightbox.create(`
+// <img src="${event.target.dataset.source}">
+// `);
+// instance.show()
+// };
+
+
+// function onEscClose() { 
+//  openBigPhoto;
 //   if (event.code === 'Escape') {
 //       instance.close();      
 //     }
-// }
+// };
 
 
 
