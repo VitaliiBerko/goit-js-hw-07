@@ -22,6 +22,11 @@ function createPhotoCartMarkup() {
     }).join('');     
 }
 
+const lightBox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+    
+});
 
 function onGalleryContainerClick (event) {
     event.preventDefault();
@@ -31,12 +36,4 @@ function onGalleryContainerClick (event) {
     if(!isPhotoCardEl) {
         return;
   }
-
-  const lightBox = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
-    captionDelay: 250,
-    
-});
-
-
 } 

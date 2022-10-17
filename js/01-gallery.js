@@ -43,34 +43,18 @@ instance.show()
 
   
   window.addEventListener('keydown', 
-  // onEscClose)
+  onEscClose)
   
-  event => {
+  function onEscClose(event) {
     if (event.code === 'Escape') {
-      instance.close();      
-    }
-
-    console.log(event.target.code);
-  });
-       
+      instance.close(); 
+      window.removeEventListener('keydown', onEscClose);
+    }   
+  
+  };
+      
 };
 
-
-
-// function openBigPhoto () { 
-//   const instance = basicLightbox.create(`
-// <img src="${event.target.dataset.source}">
-// `);
-// instance.show()
-// };
-
-
-// function onEscClose() { 
-//  openBigPhoto;
-//   if (event.code === 'Escape') {
-//       instance.close();      
-//     }
-// };
 
 
 
